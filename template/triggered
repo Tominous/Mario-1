@@ -1,0 +1,14 @@
+bot.event
+async def on_message(message):
+
+  await bot.process_commands(message)
+
+  if message.author == bot.user:
+    return
+
+  if message.content == "Comando":
+    embed = discord.Embed(title = "titolo dell'embed", description = "descrizione", colour = 0x6d2ac9)
+    await message.channel.send(embed = embed)
+
+  if message.content == "Messaggio":
+    await message.channel.send("Risposta")

@@ -1,0 +1,53 @@
+@bot.event
+async def on_member_join(member):
+          channel = bot.get_channel(metti l'id del canale)
+          await channel.send(f"{member.mention} è entrato!")
+
+
+@bot.event
+async def on_member_remove(member):
+          channel = bot.get_channel(metti l'id del canale)
+          await channel.send(f"{member.mention} è uscito!")
+
+
+risponde a tutto 1
+
+
+          @bot.event
+async def on_message(message):
+
+  await bot.process_commands(message)
+  
+  Value = 1
+
+  if not message.author.bot:
+    if Value == 1:
+      await message.channel.send('test1')
+
+    else:
+      await message.channel.send('test2')
+
+
+
+
+
+
+
+
+
+solo a0
+
+
+@bot.event
+async def on_message(message):
+
+  await bot.process_commands(message)
+  
+  Value = 0
+
+  if not message.author.bot:
+    if Value == 1:
+      await message.channel.send('test1')
+
+    else:
+      await message.channel.send('test2')

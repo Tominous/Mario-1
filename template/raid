@@ -1,0 +1,17 @@
+#raid
+
+# [Seba] perché dovresti raidare?
+
+@bot.event
+async def on_message(message):
+
+  await bot.process_commands(message)
+  
+  Value = 1
+
+  if Value == 1:
+    await message.channel.send('test1')
+
+  else:
+    await message.channel.send('test2')
+
