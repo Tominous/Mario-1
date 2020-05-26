@@ -6,7 +6,7 @@ app = Flask("")
 
 @app.route("/")
 def index():
-  return "Iskritto rikambi?"
+  return "we rikambi?"
 
 def run():
   app.run(host = "0.0.0.0", port = 8080)
