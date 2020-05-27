@@ -15,7 +15,7 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     print("Sono online come", bot.user)
-    await bot.change_presence(activity=discord.Game(name="m!help It's-a me, Mario!"))
+    await bot.change_presence(activity=discord.Game(name="It's-a me, Mario! m!help"))
 
 #help
 @bot.command(description='It s-a me, Mario!')
@@ -24,7 +24,7 @@ async def help(ctx):
         title="Okeydokey!",
         colour=discord.Colour(0xFF001E),
         timestamp=ctx.message.created_at)
-    embed.set_footer(text="Mario! Beta 4.0")
+    embed.set_footer(text="Mario!")
     for x in bot.commands:
         if not x.hidden:
             if not x.description:
@@ -54,7 +54,7 @@ async def add(ctx):
     embed = discord.Embed(
         title="Press START to play!",
         description=
-        "To recommend a triggered join the [support server](https://discord.gg/phMTYGf)",
+        "If you have words to recommend, write to **Infinit7Even#1803**",
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
@@ -106,7 +106,6 @@ async def database(ctx):
     await ctx.send(embed=embed)
 
 # triggered
-
 @bot.event
 async def on_message(message):
     await bot.process_commands(message)
@@ -138,7 +137,7 @@ async def on_message(message):
         if message.content.lower() == "mario":
             salve = [
                 'Lets-a go!', 'Mamma mia!', 'Here we go!',
-                'It s-a me, **Mario!**', 'Okeydokey!'
+                'It s-a me, **Mario!**', 'Okeydokey!', 'Im-a-tired.', 'Press "START" to play!'
             ]
             await message.channel.send(f"{random.choice(salve)}")
 
@@ -194,5 +193,24 @@ async def on_message(message):
                 'Oh shit, my creator hasn t asked for rights yet', 'https://tenor.com/view/traffic-fbiopen-up-raid-gif-13450966']
             await message.channel.send(f"{random.choice(salve)}")
 
+        if message.content.lower() == "rossi":
+            salve = [
+                'Wait!']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "start":
+            salve = [
+                'I m-a-tired.', 'Si riparte ancora.', 'Wait!']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "giovanni":
+            salve = [
+                'TIRAMI FUORI DA QUI!!!', 'Mamma mia!', 'Mamma mia Marcello!', 'Mamma miaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "gg":
+            salve = [
+                'That s my bro.']
+            await message.channel.send(f"{random.choice(salve)}")
 run_server()
 bot.run(token)
