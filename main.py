@@ -10,6 +10,7 @@ bot = commands.Bot(command_prefix="m!", description="Del")
 bot.remove_command('help')
 
 
+
 #help
 @bot.command(description='It s-a me, Mario!')
 async def help(ctx):
@@ -44,6 +45,13 @@ async def on_ready():
 
 
 #comandi
+@bot.command(description='I repeat everything you write')
+async def say(ctx, *, message):
+
+    a = commands.clean_content(use_nicknames=True)
+    message = await a.convert(ctx, message)
+
+    await ctx.send(message)
 
 #invita
 @bot.command(description='Recommend a triggered')
@@ -57,13 +65,24 @@ async def add(ctx):
     await ctx.send(embed=embed)
 
 #invita
+@bot.command(description='View source code')
+async def source(ctx):
+
+    embed = discord.Embed(
+        title="I'm-a-tired.",
+        description=
+        "The source code is available on [GitHub](https://github.com/Infinit7Even/Mario-)",
+        colour=0xFF001E)
+    await ctx.send(embed=embed)
+
+#invita
 @bot.command(description='Invite Mario to your server')
 async def invite(ctx):
 
     embed = discord.Embed(
         title="Mamma mia!",
         description=
-        "[Invite me!](https://discord.com/api/oauth2/authorize?client_id=714550524829106296&permissions=11264&scope=bot)",
+        "[Invite me!](https://discord.com/api/oauth2/authorize?client_id=714550524829106296&permissions=27648&scope=bot)",
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
@@ -83,7 +102,7 @@ async def credit(ctx):
 
     embed = discord.Embed(
         title="Thank you so much for-to-playing my game!",
-        description="Bot developed da **Infinit7Even#1803** and **IT | Kewai#9029** \n thanks also **Sebastiano#3151** thanks also.",
+        description="Bot developed da **Infinit7Even#1803** and **IT | Kewai#9029**",
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
@@ -93,7 +112,7 @@ async def database(ctx):
 
     embed = discord.Embed(
         title="Here we go!",
-        description="[Mario database list](https://mario.fandom.com/it/wiki/Lista_delle_frasi_di_Mario) **Not completed**",
+        description="Mario s word database is available on [fandom.com](https://mario.fandom.com/it/wiki/Lista_delle_frasi_di_Mario) and [GiyHub](https://github.com/Infinit7Even/Mario-/blob/master/main.py)",
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
@@ -145,4 +164,45 @@ async def on_message(message):
             salve = [
                 'Ottimo!', 'Eccllente!', 'Fantastico!']
             await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "m!say @everyone":
+            salve = [
+                'F', 'Rip.']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "oh shit":
+            salve = [
+                'OH SHIT, HERE WE GO AGAIN']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "mamma mia":
+            salve = [
+                'Mamma Mia Marcello!']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "marcello":
+            salve = [
+                'Mamma Mia Marcello!']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "luigi":
+            salve = [
+                'Luigi! Che cosa ti trattiene!?']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "onesto":
+            salve = [
+                'Ben detto fra!']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "ok":
+            salve = [
+                '```Mario approves```']
+            await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "nintendo":
+            salve = [
+                'Oh shit, my creator hasn t asked for rights yet', 'https://tenor.com/view/traffic-fbiopen-up-raid-gif-13450966']
+            await message.channel.send(f"{random.choice(salve)}")
+
 bot.run(token)
