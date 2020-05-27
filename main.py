@@ -2,14 +2,20 @@ import discord
 from discord.ext import commands
 import os
 import random
-import numpy as np
+from server import run_server
 
+#token
 token = os.environ.get("token")
 
-bot = commands.Bot(command_prefix="m!", description="Del")
+#prefisso
+bot = commands.Bot(command_prefix="m!", description="Nada")
 bot.remove_command('help')
 
-
+#status
+@bot.event
+async def on_ready():
+    print("Sono online come", bot.user)
+    await bot.change_presence(activity=discord.Game(name="m!help It's-a me, Mario!"))
 
 #help
 @bot.command(description='It s-a me, Mario!')
@@ -24,7 +30,7 @@ async def help(ctx):
             if not x.description:
                 embed.add_field(
                     name=f"{bot.command_prefix}{x.name}",
-                    value=f'non c è descrizione',
+                    value=f'Descrizione non impostata!',
                     inline=False)
             else:
                 embed.add_field(
@@ -32,17 +38,6 @@ async def help(ctx):
                     value=f'```{x.description}```',
                     inline=False)
     await ctx.send(embed=embed)
-
-
-#status
-@bot.event
-async def on_ready():
-    print("Sono online come", bot.user)
-    await bot.change_presence(activity=discord.Game(name="m!help It's-a me, Mario!"))
-
-
-
-
 
 #comandi
 @bot.command(description='I repeat everything you write')
@@ -53,7 +48,6 @@ async def say(ctx, *, message):
 
     await ctx.send(message)
 
-#invita
 @bot.command(description='Recommend a triggered')
 async def add(ctx):
 
@@ -64,7 +58,6 @@ async def add(ctx):
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
-#invita
 @bot.command(description='View source code')
 async def source(ctx):
 
@@ -75,7 +68,6 @@ async def source(ctx):
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
-#invita
 @bot.command(description='Invite Mario to your server')
 async def invite(ctx):
 
@@ -86,7 +78,6 @@ async def invite(ctx):
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
-#libreria
 @bot.command(description='Vote Mario In the Store')
 async def vote(ctx):
 
@@ -96,7 +87,6 @@ async def vote(ctx):
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
-#libreria
 @bot.command(description='Bot credits')
 async def credit(ctx):
 
@@ -106,18 +96,17 @@ async def credit(ctx):
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
-#libreria
 @bot.command(description='View Mario s database')
 async def database(ctx):
 
     embed = discord.Embed(
         title="Here we go!",
-        description="Mario s word database is available on [fandom.com](https://mario.fandom.com/it/wiki/Lista_delle_frasi_di_Mario) and [GiyHub](https://github.com/Infinit7Even/Mario-/blob/master/main.py)",
+        description="Mario s word database is available on [fandom.com](https://mario.fandom.com/it/wiki/Lista_delle_frasi_di_Mario) and [GitHub](https://github.com/Infinit7Even/Mario-/blob/master/main.py)",
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
-
 # triggered
+
 @bot.event
 async def on_message(message):
     await bot.process_commands(message)
@@ -127,7 +116,7 @@ async def on_message(message):
             await message.channel.send(
                 f"{random.choice(ciao)}")
 
-        if message.content.lower() == "ok":
+        if message.content.lower() == "noice":
             su = ['gg', 'k', 'kk']
             await message.channel.send(f"{random.choice(su)}")
 
@@ -205,4 +194,5 @@ async def on_message(message):
                 'Oh shit, my creator hasn t asked for rights yet', 'https://tenor.com/view/traffic-fbiopen-up-raid-gif-13450966']
             await message.channel.send(f"{random.choice(salve)}")
 
+run_server()
 bot.run(token)

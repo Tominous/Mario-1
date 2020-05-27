@@ -6,7 +6,7 @@ app = Flask("")
 
 @app.route("/")
 def index():
-  return "we rikambi?"
+  return "Tutti i sistemi sono tornati operativi."
 
 def run():
   app.run(host = "0.0.0.0", port = 8080)
