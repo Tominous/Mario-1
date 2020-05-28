@@ -48,15 +48,6 @@ async def say(ctx, *, message):
 
     await ctx.send(message)
 
-@bot.command(description='Recommend a triggered')
-async def add(ctx):
-
-    embed = discord.Embed(
-        title="Press START to play!",
-        description=
-        "If you have words to recommend, write to **Infinit7Even#1803**",
-        colour=0xFF001E)
-    await ctx.send(embed=embed)
 
 @bot.command(description='View source code')
 async def source(ctx):
@@ -101,7 +92,7 @@ async def database(ctx):
 
     embed = discord.Embed(
         title="Here we go!",
-        description="Mario s word database is available on [fandom.com](https://mario.fandom.com/it/wiki/Lista_delle_frasi_di_Mario) and [GitHub](https://github.com/Infinit7Even/Mario-/blob/master/main.py)",
+        description="Mario s word database is available on [GitHub](https://github.com/Infinit7Even/Mario-/blob/master/main.py)",
         colour=0xFF001E)
     await ctx.send(embed=embed)
 
