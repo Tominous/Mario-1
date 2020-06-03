@@ -37,7 +37,7 @@ async def help(ctx):
                     name=f"{bot.command_prefix}{x.name}",
                     value=f'```{x.description}```',
                     inline=False)
-    await ctx.send(embed=embed)
+    await ctx.author.send(embed=embed, delete_after=90)
 
 #comandi
 @bot.command(description='I repeat everything you write')
@@ -46,7 +46,7 @@ async def say(ctx, *, message):
     a = commands.clean_content(use_nicknames=True)
     message = await a.convert(ctx, message)
 
-    await ctx.send(message)
+    await ctx.author.send(message)
 
 
 @bot.command(description='View source code')
@@ -57,7 +57,7 @@ async def source(ctx):
         description=
         "The source code is available on [GitHub](https://github.com/Infinit7Even/Mario-)",
         colour=0xFF001E)
-    await ctx.send(embed=embed)
+    await ctx.author.send(embed=embed)
 
 @bot.command(description='Invite Mario to your server')
 async def invite(ctx):
@@ -67,7 +67,7 @@ async def invite(ctx):
         description=
         "[Invite me!](https://discord.com/api/oauth2/authorize?client_id=714550524829106296&permissions=27648&scope=bot)",
         colour=0xFF001E)
-    await ctx.send(embed=embed)
+    await ctx.author.send(embed=embed)
 
 @bot.command(description='Vote Mario In the Store')
 async def vote(ctx):
@@ -76,7 +76,7 @@ async def vote(ctx):
         title="Thank you so much for-to-playing my game!",
         description="Coming Soon!",
         colour=0xFF001E)
-    await ctx.send(embed=embed)
+    await ctx.author.send(embed=embed)
 
 @bot.command(description='Bot credits')
 async def credit(ctx):
@@ -85,7 +85,7 @@ async def credit(ctx):
         title="Thank you so much for-to-playing my game!",
         description="Bot developed da **Infinit7Even#1803** and **IT | Kewai#9029**",
         colour=0xFF001E)
-    await ctx.send(embed=embed)
+    await ctx.author.send(embed=embed)
 
 @bot.command(description='View Mario s database')
 async def database(ctx):
@@ -94,7 +94,16 @@ async def database(ctx):
         title="Here we go!",
         description="Mario s word database is available on [GitHub](https://github.com/Infinit7Even/Mario-/blob/master/main.py)",
         colour=0xFF001E)
-    await ctx.send(embed=embed)
+    await ctx.author.send(embed=embed)
+
+
+@bot.event
+async def on_message(message):
+    await bot.process_commands(message)
+    if not message.author.bot:
+       if message.content.lower() == "oi":
+           embed = discord.Embed(title = "titolo dell'embed", description = "Ottimo lavoro! Ricordati di lasciare una [Recensione](https://disboard.org/server/reviews/617879388150824980) al server!", colour = 0x6d2ac9)
+           await ctx.author.send(embed = embed)
 
 # triggered
 @bot.event
@@ -203,5 +212,23 @@ async def on_message(message):
             salve = [
                 'That s my bro.']
             await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "mario dm":
+            ciao = ['I am back!']
+            await message.author.send(
+                f"{random.choice(ciao)}")
+
+        if message.content.lower() == "m!say":
+            ciao = ['`To use that command type m!say message`']
+            await message.author.send(
+                f"{random.choice(ciao)}")
+
+        if message.content.lower() == "m!help":
+            ciao = ['I wrote to you privately!', 'The menu was sent to you privately']
+            await message.channel.send(
+                f"{random.choice(ciao)}")
+
+
+
 run_server()
 bot.run(token)
