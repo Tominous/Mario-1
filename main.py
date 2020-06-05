@@ -223,10 +223,10 @@ async def on_message(message):
                 f"{random.choice(ciao)}")
 
         if message.content.lower() == "m!help":
-            ciao = ['I wrote to you privately!', 'The menu was sent to you privately']
+            ciao = ['I wrote to you privately!\nMake sure you have not blocked direct messages in your account discord settings.', 'The menu was sent to you privately.\nI wrote to you privately! Make sure you have not blocked direct messages in your account discord settings.']
             await message.channel.send(
                 f"{random.choice(ciao)}")
-
+        
         if message.content.lower() == "super mario":
             ciao = ['bross WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII', 'https://www.youtube.com/watch?v=9kdayFSHkyI']
             await message.channel.send(
