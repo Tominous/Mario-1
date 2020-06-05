@@ -65,7 +65,7 @@ async def invite(ctx):
     embed = discord.Embed(
         title="Mamma mia!",
         description=
-        "[Invite me!](https://discord.com/api/oauth2/authorize?client_id=714550524829106296&permissions=27648&scope=bot)",
+        "[Invite me!](https://top.gg/bot/714550524829106296)",
         colour=0xFF001E)
     await ctx.author.send(embed=embed)
 
@@ -74,7 +74,7 @@ async def vote(ctx):
 
     embed = discord.Embed(
         title="Thank you so much for-to-playing my game!",
-        description="Coming Soon!",
+        description="[Vote Mario!](https://top.gg/bot/714550524829106296)",
         colour=0xFF001E)
     await ctx.author.send(embed=embed)
 
@@ -121,8 +121,7 @@ async def on_message(message):
 
         if message.content.lower() == "rip":
             salve = [
-                'https://tenor.com/view/rip-coffin-black-ghana-celebrating-gif-16743302',
-                'https://tenor.com/view/davis-boreanaz-salute-uniform-gif-4762830'
+                'https://tenor.com/view/rip-coffin-black-ghana-celebrating-gif-16743302', 'https://cdn.discordapp.com/attachments/611325092269522944/717659473057022013/SnapCrab_NoName_2020-6-3_10-42-9_No-00.png', 'https://tenor.com/view/davis-boreanaz-salute-uniform-gif-4762830'
             ]
             await message.channel.send(f"{random.choice(salve)}")
 
@@ -228,6 +227,10 @@ async def on_message(message):
             await message.channel.send(
                 f"{random.choice(ciao)}")
 
+        if message.content.lower() == "super mario":
+            ciao = ['bross WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII', 'https://www.youtube.com/watch?v=9kdayFSHkyI']
+            await message.channel.send(
+                f"{random.choice(ciao)}")
 
 
 run_server()
