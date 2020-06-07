@@ -96,20 +96,28 @@ async def database(ctx):
         colour=0xFF001E)
     await ctx.author.send(embed=embed)
 
-
+#support
 @bot.event
 async def on_message(message):
     await bot.process_commands(message)
     if not message.author.bot:
-       if message.content.lower() == "oi":
-           embed = discord.Embed(title = "titolo dell'embed", description = "Ottimo lavoro! Ricordati di lasciare una [Recensione](https://disboard.org/server/reviews/617879388150824980) al server!", colour = 0x6d2ac9)
-           await ctx.author.send(embed = embed)
 
-# triggered
+        if message.content.lower() == "m!say":
+            ciao = ['`To use that command type m!say message`']
+            await message.author.send(
+                f"{random.choice(ciao)}")
+
+        if message.content.lower() == "m!help":
+            ciao = ['I wrote to you privately!\nMake sure you have not blocked direct messages in your account discord settings.', 'The menu was sent to you privately.\nI wrote to you privately! Make sure you have not blocked direct messages in your account discord settings.']
+            await message.channel.send(
+                f"{random.choice(ciao)}")
+
+#triggered
 @bot.event
 async def on_message(message):
     await bot.process_commands(message)
     if not message.author.bot:
+
         if message.content.lower() == "ciao":
             ciao = ['Ehi, torna qua, scimmione!', 'Hi']
             await message.channel.send(
@@ -136,9 +144,15 @@ async def on_message(message):
         if message.content.lower() == "mario":
             salve = [
                 'Lets-a go!', 'Mamma mia!', 'Here we go!',
-                'It s-a me, **Mario!**', 'Okeydokey!', 'Im-a-tired.', 'Press "START" to play!'
+                'It s-a me, **Mario!**', 'Okeydokey!', 'Im-a-tired.', 'Press "START" to play!', 'Hello there', 'I am back!'
             ]
             await message.channel.send(f"{random.choice(salve)}")
+
+        if message.content.lower() == "start":
+            salve = [
+                'Use `m!help` to open the menu']
+            await message.channel.send(f"{random.choice(salve)}")
+
 
         if message.content.lower() == "come va?":
             salve = [
@@ -197,11 +211,6 @@ async def on_message(message):
                 'Wait!']
             await message.channel.send(f"{random.choice(salve)}")
 
-        if message.content.lower() == "start":
-            salve = [
-                'I m-a-tired.', 'Si riparte ancora.', 'Wait!']
-            await message.channel.send(f"{random.choice(salve)}")
-
         if message.content.lower() == "giovanni":
             salve = [
                 'TIRAMI FUORI DA QUI!!!', 'Mamma mia!', 'Mamma mia Marcello!', 'Mamma miaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']
@@ -216,22 +225,16 @@ async def on_message(message):
             ciao = ['I am back!']
             await message.author.send(
                 f"{random.choice(ciao)}")
-
-        if message.content.lower() == "m!say":
-            ciao = ['`To use that command type m!say message`']
-            await message.author.send(
-                f"{random.choice(ciao)}")
-
-        if message.content.lower() == "m!help":
-            ciao = ['I wrote to you privately!\nMake sure you have not blocked direct messages in your account discord settings.', 'The menu was sent to you privately.\nI wrote to you privately! Make sure you have not blocked direct messages in your account discord settings.']
-            await message.channel.send(
-                f"{random.choice(ciao)}")
         
         if message.content.lower() == "super mario":
             ciao = ['bross WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII', 'https://www.youtube.com/watch?v=9kdayFSHkyI']
             await message.channel.send(
                 f"{random.choice(ciao)}")
 
+        if message.content.lower() == "fuck you":
+            ciao = ['Owowowow']
+            await message.channel.send(
+                f"{random.choice(ciao)}")
 
 run_server()
 bot.run(token)
