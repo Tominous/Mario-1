@@ -96,27 +96,46 @@ async def database(ctx):
         colour=0xFF001E)
     await ctx.author.send(embed=embed)
 
+@bot.command(description='Use this command if Mario isn t working properly')
+async def fix(ctx):
+
+    embed = discord.Embed(
+        title="Nighty, nighty. Ah, spaghetti... ah, ravioli... ah, mamma mia.",
+        description="Make sure Mario can read the messages, delete them and send links, if you still have problems contact Infinit7Even#1803.",
+        colour=0xFF001E)
+    await ctx.author.send(embed=embed)
+
 #support
 @bot.event
 async def on_message(message):
     await bot.process_commands(message)
     if not message.author.bot:
-
+      
         if message.content.lower() == "m!say":
-            ciao = ['`To use that command type m!say message`']
+            triggered = ['`To use that command type m!say message`']
             await message.author.send(
-                f"{random.choice(ciao)}")
+                f"{random.choice(triggered)}")
 
         if message.content.lower() == "m!help":
-            ciao = ['I wrote to you privately!\nMake sure you have not blocked direct messages in your account discord settings.', 'The menu was sent to you privately.\nI wrote to you privately! Make sure you have not blocked direct messages in your account discord settings.']
+            triggered = ['I wrote to you privately!\nMake sure you have not blocked direct messages in your account discord settings.', 'The menu was sent to you privately.\nMake sure you have not blocked direct messages in your account discord settings.']
             await message.channel.send(
-                f"{random.choice(ciao)}")
+                f"{random.choice(triggered)}")
 
 #triggered
 @bot.event
 async def on_message(message):
     await bot.process_commands(message)
     if not message.author.bot:
+      
+        if message.content.lower() == "m!say":
+            triggered = ['`To use that command type m!say message`']
+            await message.author.send(
+                f"{random.choice(triggered)}")
+
+        if message.content.lower() == "m!help":
+            triggered = ['I wrote to you privately!\nMake sure you have not blocked direct messages in your account discord settings.', 'The menu was sent to you privately.\nMake sure you have not blocked direct messages in your account discord settings.']
+            await message.channel.send(
+                f"{random.choice(triggered)}")
 
         if message.content.lower() == "ciao":
             triggered = ['Ehi, torna qua, scimmione!', 'Hi']
@@ -235,6 +254,19 @@ async def on_message(message):
             await message.channel.send(
                 f"{random.choice(triggered)}")
 
+        if message.content.lower() == "64":
+            triggered = ['What memories...']
+            await message.channel.send(
+                f"{random.choice(triggered)}")
+
+        if message.content.lower() == "ok":
+            triggered = ['oki']
+            await message.channel.send(
+                f"{random.choice(triggered)}")
+
+        if message.content.lower() == "yo":
+            triggered = ['risposta 1', 'risposta 2']
+            await message.channel.send(
+                f"{random.choice(triggered)}")
 run_server()
 bot.run(token)
-
