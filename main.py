@@ -119,122 +119,122 @@ async def on_message(message):
     if not message.author.bot:
 
         if message.content.lower() == "ciao":
-            ciao = ['Ehi, torna qua, scimmione!', 'Hi']
+            triggered = ['Ehi, torna qua, scimmione!', 'Hi']
             await message.channel.send(
-                f"{random.choice(ciao)}")
+                f"{random.choice(triggered)}")
 
         if message.content.lower() == "noice":
-            su = ['gg', 'k', 'kk']
-            await message.channel.send(f"{random.choice(su)}")
+            triggered = ['gg', 'k', 'kk']
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "rip":
-            salve = [
+            triggered = [
                 'https://tenor.com/view/rip-coffin-black-ghana-celebrating-gif-16743302', 'https://cdn.discordapp.com/attachments/611325092269522944/717659473057022013/SnapCrab_NoName_2020-6-3_10-42-9_No-00.png', 'https://tenor.com/view/davis-boreanaz-salute-uniform-gif-4762830'
             ]
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "f":
-            salve = ['F', '```Press F to Pay Respect```']
-            await message.channel.send(f"{random.choice(salve)}")
+            triggered = ['F', '```Press F to Pay Respect```']
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "we":
-            salve = ['Olah!', 'Welà']
-            await message.channel.send(f"{random.choice(salve)}")
+            triggered = ['Olah!', 'Welà']
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "mario":
-            salve = [
+            triggered = [
                 'Lets-a go!', 'Mamma mia!', 'Here we go!',
                 'It s-a me, **Mario!**', 'Okeydokey!', 'Im-a-tired.', 'Press "START" to play!', 'Hello there', 'I am back!'
             ]
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "start":
-            salve = [
+            triggered = [
                 'Use `m!help` to open the menu']
-            await message.channel.send(f"{random.choice(salve)}")
-
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "come va?":
-            salve = [
+            triggered = [
                 'Bene, a te?', 'Alla grande!', 'Spettacularis!',
                 'It s-a me, **Mario!**', 'Good!'
             ]
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "bene":
-            salve = [
+            triggered = [
                 'Ottimo!', 'Eccllente!', 'Fantastico!']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "m!say @everyone":
-            salve = [
+            triggered = [
                 'F', 'Rip.']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "oh shit":
-            salve = [
+            triggered = [
                 'OH SHIT, HERE WE GO AGAIN']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "mamma mia":
-            salve = [
+            triggered = [
                 'Mamma Mia Marcello!']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "marcello":
-            salve = [
+            triggered = [
                 'Mamma Mia Marcello!']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "luigi":
-            salve = [
+            triggered = [
                 'Luigi! Che cosa ti trattiene!?']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "onesto":
-            salve = [
+            triggered = [
                 'Ben detto fra!']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "ok":
-            salve = [
+            triggered = [
                 '```Mario approves```']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "nintendo":
-            salve = [
+            triggered = [
                 'Oh shit, my creator hasn t asked for rights yet', 'https://tenor.com/view/traffic-fbiopen-up-raid-gif-13450966']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "rossi":
-            salve = [
+            triggered = [
                 'Wait!']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "giovanni":
-            salve = [
+            triggered = [
                 'TIRAMI FUORI DA QUI!!!', 'Mamma mia!', 'Mamma mia Marcello!', 'Mamma miaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "gg":
-            salve = [
+            triggered = [
                 'That s my bro.']
-            await message.channel.send(f"{random.choice(salve)}")
+            await message.channel.send(f"{random.choice(triggered)}")
 
         if message.content.lower() == "mario dm":
-            ciao = ['I am back!']
+            triggered = ['I am back!']
             await message.author.send(
-                f"{random.choice(ciao)}")
+                f"{random.choice(triggered)}")
         
         if message.content.lower() == "super mario":
-            ciao = ['bross WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII', 'https://www.youtube.com/watch?v=9kdayFSHkyI']
+            triggered = ['bross WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII', 'https://www.youtube.com/watch?v=9kdayFSHkyI']
             await message.channel.send(
-                f"{random.choice(ciao)}")
+                f"{random.choice(triggered)}")
 
         if message.content.lower() == "fuck you":
-            ciao = ['Owowowow']
+            triggered = ['Owowowow']
             await message.channel.send(
-                f"{random.choice(ciao)}")
+                f"{random.choice(triggered)}")
 
 run_server()
 bot.run(token)
+
