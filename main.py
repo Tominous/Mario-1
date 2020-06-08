@@ -164,16 +164,6 @@ async def on_message(message):
 async def on_message(message):
     await bot.process_commands(message)
     if not message.author.bot:
-      
-        if message.content.lower() == "m!say":
-            triggered = ['`To use that command type m!say message`']
-            await message.author.send(
-                f"{random.choice(triggered)}")
-
-        if message.content.lower() == "m!help":
-            triggered = ['I wrote to you privately!\nMake sure you have not blocked direct messages in your account discord settings.', 'The menu was sent to you privately.\nMake sure you have not blocked direct messages in your account discord settings.']
-            await message.channel.send(
-                f"{random.choice(triggered)}")
 
         if message.content.lower() == "ciao":
             triggered = ['Ehi, torna qua, scimmione!', 'Hi']
