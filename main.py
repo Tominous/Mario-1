@@ -8,7 +8,7 @@ from server import run_server
 token = os.environ.get("token")
 
 #prefisso
-bot = commands.Bot(command_prefix="m!", description="Nada")
+bot = commands.Bot(command_prefix="m!", description="Nada.")
 bot.remove_command('help')
 
 #status
