@@ -15,7 +15,7 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     print("Sono online come", bot.user)
-    await bot.change_presence(activity=discord.Game(name=f"It's-a me, Mario! m!help Kingdoms {len(bot.guilds)}"))
+    await bot.change_presence(activity=discord.Game(name="It's-a me, Mario! m!help"))
 
 
 #help
@@ -75,7 +75,7 @@ async def say(ctx, *, message):
     a = commands.clean_content(use_nicknames=True)
     message = await a.convert(ctx, message)
 
-    await ctx.author.send(message)
+    await ctx.send(message)
 
 @bot.command(description='View support server')
 async def support(ctx):
@@ -287,20 +287,9 @@ async def on_message(message):
             await message.channel.send(
                 f"{random.choice(triggered)}")
 
-        if message.content.lower() == "ok":
-            triggered = ['oki']
-            await message.channel.send(
-                f"{random.choice(triggered)}")
-
         if message.content.lower() == "yo":
             triggered = ['risposta 1', 'risposta 2']
             await message.channel.send(
                 f"{random.choice(triggered)}")
-
-        if message.content.lower() == "yo":
-            triggered = ['sono online in {len(bot.guilds)} server']
-            await message.channel.send(
-                f"{random.choice(triggered)}")
-
 run_server()
 bot.run(token)
