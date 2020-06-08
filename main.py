@@ -87,7 +87,7 @@ async def support(ctx):
     embed = discord.Embed(
         title="I'm-a-tired.",
         description=
-        "Coming soon...",
+        "[Support server](https://discord.gg/DF7KSsN)",
         colour=0xFF001E)
     await ctx.send(embed=embed, delete_after=20)
 
@@ -122,14 +122,6 @@ async def credit(ctx):
     embed = discord.Embed(
         title="Thank you so much for-to-playing my game!",
         description="Bot developed da **Infinit7Even#1803** and **IT | Kewai#9029**",
-        colour=0xFF001E)
-    await ctx.send(embed=embed, delete_after=20)
-
-@bot.command(description='View Mario s database')
-async def database(ctx):
-    embed = discord.Embed(
-        title="Here we go!",
-        description="Mario s word database is available on [GitHub](https://github.com/Infinit7Even/Mario-/blob/master/main.py)",
         colour=0xFF001E)
     await ctx.send(embed=embed, delete_after=20)
 
