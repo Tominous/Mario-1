@@ -15,7 +15,8 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     print("Sono online come", bot.user)
-    await bot.change_presence(activity=discord.Game(name="It's-a me, Mario! m!help"))
+    await bot.change_presence(activity=discord.Game(name=f"It's-a me, Mario! m!help Kingdoms {len(bot.guilds)}"))
+
 
 #help
 @bot.command(description='It s-a me, Mario!')
@@ -24,7 +25,7 @@ async def help(ctx):
         title="Okeydokey!",
         colour=discord.Colour(0xFF001E),
         timestamp=ctx.message.created_at)
-    embed.set_footer(text="Mario!")
+    embed.set_footer(text=f"I am exploring {len(bot.guilds)} kingdoms")
     for x in bot.commands:
         if not x.hidden:
             if not x.description:
@@ -39,6 +40,34 @@ async def help(ctx):
                     inline=False)
     await ctx.author.send(embed=embed, delete_after=90)
 
+#log
+@bot.event
+async def on_guild_join(guild):
+
+    ch = bot.get_channel(719316259237396491)
+    emb = discord.Embed(
+      description=f"{bot.user.mention} has arrived in the kingdom of **{guild.name}**\n King :  **{guild.owner}**\n Inhabitants : **{guild.member_count}**",
+        colour=0xFF001E)
+    emb.set_footer(text=f"I am exploring {len(bot.guilds)} castel", icon_url=bot.user.avatar_url)
+    emb.set_thumbnail(url=guild.icon_url)
+    if guild.banner:
+        emb.set_image(url=guild.banner_url)
+    await ch.send(embed=emb)
+
+
+@bot.event
+async def on_guild_remove(guild):
+
+    ch = bot.get_channel(719316259237396491)
+    emb = discord.Embed(
+        description=f"{bot.user.mention} has abandoned the kingdom of **{guild.name}**\n King :  **{guild.owner}**\n Inhabitants : **{guild.member_count}**",
+        colour=0xFF001E)
+    emb.set_footer(text=f"I am exploring {len(bot.guilds)} castel", icon_url=bot.user.avatar_url)
+    emb.set_thumbnail(url=guild.icon_url)
+    if guild.banner:
+        emb.set_image(url=guild.banner_url)
+    await ch.send(embed=emb)
+
 #comandi
 @bot.command(description='I repeat everything you write')
 async def say(ctx, *, message):
@@ -48,6 +77,15 @@ async def say(ctx, *, message):
 
     await ctx.author.send(message)
 
+@bot.command(description='View support server')
+async def support(ctx):
+
+    embed = discord.Embed(
+        title="I'm-a-tired.",
+        description=
+        "Coming soon...",
+        colour=0xFF001E)
+    await ctx.author.send(embed=embed)
 
 @bot.command(description='View source code')
 async def source(ctx):
@@ -268,5 +306,11 @@ async def on_message(message):
             triggered = ['risposta 1', 'risposta 2']
             await message.channel.send(
                 f"{random.choice(triggered)}")
+
+        if message.content.lower() == "yo":
+            triggered = ['sono online in {len(bot.guilds)} server']
+            await message.channel.send(
+                f"{random.choice(triggered)}")
+
 run_server()
 bot.run(token)
