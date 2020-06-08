@@ -20,6 +20,7 @@ async def on_ready():
 
 @bot.command(description='It s-a me, Mario!')
 async def help(ctx):
+    await ctx.message.delete()
     embed = discord.Embed(
         title="Okeydokey!",
         colour=discord.Colour(0xFF001E),
@@ -84,6 +85,7 @@ async def say(ctx, *, message):
 
 @bot.command(description='View support server')
 async def support(ctx):
+    await ctx.message.delete()
     embed = discord.Embed(
         title="I'm-a-tired.",
         description=
@@ -93,6 +95,7 @@ async def support(ctx):
 
 @bot.command(description='View source code')
 async def source(ctx):
+    await ctx.message.delete()
     embed = discord.Embed(
         title="I'm-a-tired.",
         description=
@@ -102,6 +105,7 @@ async def source(ctx):
 
 @bot.command(description='Invite Mario to your server')
 async def invite(ctx):
+    await ctx.message.delete()
     embed = discord.Embed(
         title="Mamma mia!",
         description=
@@ -111,6 +115,7 @@ async def invite(ctx):
 
 @bot.command(description='Vote Mario In the Store')
 async def vote(ctx):
+    await ctx.message.delete()
     embed = discord.Embed(
         title="Thank you so much for-to-playing my game!",
         description="[Vote Mario!](https://top.gg/bot/714550524829106296)",
@@ -119,6 +124,7 @@ async def vote(ctx):
 
 @bot.command(description='Bot credits')
 async def credit(ctx):
+    await ctx.message.delete()
     embed = discord.Embed(
         title="Thank you so much for-to-playing my game!",
         description="Bot developed da **Infinit7Even#1803** and **IT | Kewai#9029**",
@@ -127,6 +133,7 @@ async def credit(ctx):
 
 @bot.command(description='Use this command if Mario isn t working properly')
 async def fix(ctx):
+    await ctx.message.delete()
     embed = discord.Embed(
         title="Nighty, nighty. Ah, spaghetti... ah, ravioli... ah, mamma mia.",
         description="Make sure Mario can read the messages, delete them and send links, if you still have problems contact Infinit7Even#1803.",
